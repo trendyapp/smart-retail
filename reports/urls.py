@@ -18,4 +18,5 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.report_list, name='report_list'),
+    url(r'^report/(?P<pk>[0-9]+)/$', views.report_detail, name='report_detail'),
 ]

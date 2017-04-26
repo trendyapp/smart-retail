@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Report
 from django.utils import timezone
 
@@ -9,4 +9,6 @@ def report_list(request):
 	return render(request, 'reports/report_list.html', {'reports':reports})
 
 
-
+def report_detail(request, pk):
+	report = get_object_or_404(Report, pk=pk)
+	return render(request, 'reports/report_detail.html', {'report': report})
